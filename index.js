@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3001;
-
+const cors = require('cors');  // Import cors package
 app.use(express.json());
-
+app.use(cors());
 // POST /bfhl
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
