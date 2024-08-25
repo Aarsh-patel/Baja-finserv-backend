@@ -2,8 +2,13 @@ const express = require('express');
 const app = express();
 const port = 3001;
 const cors = require('cors');  // Import cors package
+
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+    origin: ['https://bajaj-frontend-825f.onrender.com'],
+    credentials:true
+}
+app.use(cors(corsOptions));
 // POST /bfhl
 app.post('/bfhl', (req, res) => {
   const { data } = req.body;
